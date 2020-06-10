@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+one = Post.create(content: "I want police brutality to stop", state: "California", country: "US", likes: 3)
+two = Post.create(content: "My husband was killed by law enforcement 3 years ago", state: "Georgia", country: "US", likes: 2)
+three = Post.create(content: "MLK was a great leader for the black community", state: "California", country: "US", likes: 1)
+four = Post.create(content: "Right now we all need to be close to our loved ones", state: "Georgia", country: "US", likes: 0)
+
+

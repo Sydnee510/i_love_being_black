@@ -18,11 +18,11 @@ class PostsController < ApplicationController
     end
     def destroy
         @post = Post.find(params[:id])
-        @post.destroy
-        render json: @post, status: 200
+        @post.delete
+        render json: {postId: @post.id}
     end 
     private
     def post_params
-        params.require(:post).permit(:content, :state, :country)
+        params.require(:post).permit(:content, :state, :country, :likes)
     end
 end

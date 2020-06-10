@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :state
       t.string :country
       t.integer :likes
-      t.integer :user_id
       t.timestamps null: false
     end
   end
