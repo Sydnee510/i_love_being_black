@@ -2,22 +2,26 @@ class Posts {
     constructor() {
         this.posts = []
         this.adapter = new PostsAdapter()
-        //this.bindEventListeners()
+        this.initBindingsAndEventListeners()
         this.fetchAndLoadPosts()
+    }
+
+    initBindingsAndEventListeners(){
+        this.postsContainer = document.getElementById('posts-container')
     }
 
     fetchAndLoadPosts() {
         this.adapter
         .getPosts()
         .then(posts => {
-            posts.forEach(post => this.posts.push(post))
+            posts.forEach(post => this.posts.push(new Post(post)))
+            console.log(this.posts)
         })
         .then(() => {
             this.render()
         })
     }
     render(){
-        const postsContainer = document.getElementById("posts-container")
-        postsContainer.innerHTML = 'my posts here'
+        this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
     }
 }

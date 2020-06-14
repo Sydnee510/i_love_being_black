@@ -6,4 +6,7 @@ class Post {
         this.country = postJSON.country 
         this.likes = postJSON.likes
     }
+    renderLi(){
+        return `<li data id=${this.id}>${this.content}, ${this.state}, ${this.country}, ${this.likes}</li>`
+    }
 }
