@@ -2756,3 +2756,1287 @@ Processing by PostsController#index as */*
 Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 2399)
 
 
+Started GET "/posts" for ::1 at 2020-06-14 12:50:53 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 2421)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 12:51:01 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 19:51:01.809851"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 3.0ms | Allocations: 3100)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 12:51:19 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California, US, 3 likes"], ["updated_at", "2020-06-14 19:51:19.661314"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 12:51:22 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 2399)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:10:58 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 2421)
+
+
+Started PATCH "/posts/2" for ::1 at 2020-06-14 13:11:28 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"My son was killed by law enforcement 3 years ago, Georgia, US"}, "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "My son was killed by law enforcement 3 years ago, Georgia, US"], ["updated_at", "2020-06-14 20:11:28.263940"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 3.8ms | Allocations: 3100)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:11:45 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 2400)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:29:45 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2421)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:31:29 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 2399)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:36:56 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 2421)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:37:47 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2399)
+
+
+Started PATCH "/posts/10" for ::1 at 2020-06-14 13:37:57 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"wendys burned, Georgia, US, null likes"}, "id"=>"10"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "wendys burned, Georgia, US, null likes"], ["updated_at", "2020-06-14 20:37:57.733029"], ["id", 10]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 3099)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:38:57 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 13:39:06 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California, US, 3 likes, California"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California, US, 3 likes, California"], ["updated_at", "2020-06-14 20:39:06.051035"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.9ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:39:31 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 2401)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 13:39:51 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California, US, 3 likes"], ["updated_at", "2020-06-14 20:39:51.584101"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.3ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:39:53 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:41:12 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started PATCH "/posts/10" for ::1 at 2020-06-14 13:41:33 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"wendys burned, Georgia, US, 6 likes"}, "id"=>"10"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "wendys burned, Georgia, US, 6 likes"], ["updated_at", "2020-06-14 20:41:33.645322"], ["id", 10]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:41:39 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:43:40 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 13:43:50 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police crime to stop California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police crime to stop California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 20:43:50.284077"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:43:55 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started PATCH "/posts/2" for ::1 at 2020-06-14 13:44:06 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"My son was wounded law enforcement 3 years ago, Georgia, US, Georgia, US, 2 likes"}, "id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "My son was wounded law enforcement 3 years ago, Georgia, US, Georgia, US, 2 likes"], ["updated_at", "2020-06-14 20:44:06.876398"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 3082)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:44:09 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:45:07 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 2401)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 13:45:28 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California"], ["updated_at", "2020-06-14 20:45:28.553031"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.9ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:45:32 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 13:45:44 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop California, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop California, California, US, 3 likes"], ["updated_at", "2020-06-14 20:45:44.524582"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:45:46 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:47:06 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:47:56 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:49:02 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:49:37 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:49:54 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:50:44 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:51:09 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:51:47 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:52:09 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:52:40 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:53:41 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:53:43 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:56:26 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:56:54 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:58:26 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2402)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:58:41 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 2401)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 13:59:03 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 2401)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:09 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 616)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:10 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:12 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:13 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:14 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:27 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 13:59:36 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:00:20 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 2403)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:22 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:23 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:25 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:00:29 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 2400)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:36 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:39 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:00:43 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started POST "/posts" for ::1 at 2020-06-14 14:00:43 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"we need heroes", "state"=>"alabama", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "we need heroes"], ["state", "alabama"], ["country", "US"], ["created_at", "2020-06-14 21:00:43.612761"], ["updated_at", "2020-06-14 21:00:43.612761"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 6.5ms | Allocations: 2474)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:00:48 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2562)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:01:27 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2562)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:01:52 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2562)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:02:06 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2562)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:02:20 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 2562)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:02:26 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:04:13 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 2561)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:15 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:17 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:17 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:18 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:19 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:19 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:23 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:04:31 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:04:39 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 2561)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:05:14 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes"], ["updated_at", "2020-06-14 21:05:14.910419"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 3.0ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:05:17 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2562)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:05:29 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:05:39 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:05:57 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:06:36 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 8.8ms | ActiveRecord: 0.9ms | Allocations: 7912)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:06:37 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 734)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:06:39 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 12ms (ActiveRecord: 0.1ms | Allocations: 613)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:06:41 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:06:49 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 21:06:49.581218"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 3129)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:08:58 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/syd/i_love_being_black/love_black_backend/app/controllers/posts_controller.rb:35: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/posts_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+app/controllers/posts_controller.rb:35: syntax error, unexpected end, expecting end-of-input
+Started GET "/posts" for ::1 at 2020-06-14 14:09:21 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.0ms | Allocations: 7912)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:09:32 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 734)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:09:34 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:09:36 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started POST "/posts" for ::1 at 2020-06-14 14:09:39 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"", "state"=>"", "country"=>""}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:09:46 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 2561)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:10:16 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 7911)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:10:24 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 21:10:24.435708"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 3252)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:10:25 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started POST "/posts" for ::1 at 2020-06-14 14:10:25 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1706)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:10:38 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 613)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:13:39 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.7ms | Allocations: 7910)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:13:41 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 734)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:14:41 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2561)
+
+
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:14:45 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 612)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:14:47 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/undefined" for ::1 at 2020-06-14 14:14:51 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>""}, "id"=>"undefined"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 611)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=undefined):
+  
+app/controllers/posts_controller.rb:19:in `update'
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:14:53 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 21:14:53.553536"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 3129)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:16:54 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.7ms | Allocations: 2562)
+
+
+Started POST "/posts" for ::1 at 2020-06-14 14:17:06 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2735)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:17:15 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2564)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:17:36 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes"], ["updated_at", "2020-06-14 21:17:36.257191"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:17:39 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 2562)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:17:42 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 2562)
+
+
+Started POST "/posts" for ::1 at 2020-06-14 14:18:20 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"another black man shot", "state"=>"Mississippi", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "another black man shot"], ["state", "Mississippi"], ["country", "US"], ["created_at", "2020-06-14 21:18:20.693197"], ["updated_at", "2020-06-14 21:18:20.693197"]]
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:11:in `create'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 2613)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:18:27 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 2725)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:21:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 8072)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:21:41 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 784)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, NilClass passed.):
+  
+app/controllers/posts_controller.rb:20:in `update'
+Started GET "/posts" for ::1 at 2020-06-14 14:21:59 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2724)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:22:18 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 1.1ms | Allocations: 8071)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:22:22 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1434)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:22:35 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1219)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:22:56 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police crime to stop, California, US"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1219)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:23:00 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 2725)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:23:09 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1217)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:23:31 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police crime to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1219)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:23:34 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2725)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:26:02 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 8072)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:26:07 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police brutality to stop, California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 21:26:07.734986"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.7ms | Allocations: 3252)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-06-14 14:26:16 -0700
+Processing by PostsController#update as */*
+  Parameters: {"post"=>{"content"=>"I want police crime to stop, California, US, 3 likes, California, US, 3 likes"}, "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "I want police crime to stop, California, US, 3 likes, California, US, 3 likes"], ["updated_at", "2020-06-14 21:26:16.332537"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:20:in `update'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 3.1ms | Allocations: 3081)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:26:56 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 2.3ms | Allocations: 8395)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:27:46 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2740)
+
+
+Started POST "/posts" for ::1 at 2020-06-14 14:30:49 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"a black man shot and killed", "state"=>"Georgia", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "a black man shot and killed"], ["state", "Georgia"], ["country", "US"], ["created_at", "2020-06-14 21:30:49.867921"], ["updated_at", "2020-06-14 21:30:49.867921"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 5.4ms | Allocations: 2734)
+
+
+Started GET "/posts" for ::1 at 2020-06-14 14:30:57 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 2903)
+
+

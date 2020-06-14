@@ -1,13 +1,22 @@
+body {
+    background-color: rgb(156, 156, 43);
+}
 #new-post-form{
     border-radius: 25px;
-    background: #73AD21;
+    background: rgb(161, 46, 46);
     padding: 20px; 
     width: 200px;
     height: 150px; 
+    margin: 0 auto;
+}
+h1 {
+    text-align: center;
+    color: black;
 }
 li  {
+    margin: 0 auto;
     border-radius: 25px;
-    background: gray;
+    background: green;
     padding: 20px; 
     width: 300px;
     height: 80px; 
