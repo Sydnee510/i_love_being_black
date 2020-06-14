@@ -8,13 +8,20 @@ class PostsController < ApplicationController
         render json: @post, status: 200
     end 
     def create 
-        @post = Post.create(post_params)
+        @post = Post.new(post_params)
+        if @post.save
         render json: @post, status: 200
+        else 
+            render :json => { :errors => @post.errors.full_messages }, :status => 422
+        end
     end
     def update 
         @post = Post.find(params[:id])
-        @post.update(post_params)
+        if @post.update(post_params)
         render json: @post, status: 200
+        else 
+            render :json => { :errors => @post.errors.full_messages }, :status => 422
+        end
     end
     def destroy
         @post = Post.find(params[:id])
