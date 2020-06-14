@@ -14,6 +14,8 @@ class Posts {
         this.newPostLikes = document.getElementById('new-post-likes')
         this.postForm = document.getElementById('new-post-form')
         this.postForm.addEventListener('submit', this.createPost.bind(this))
+        this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
+        this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
     }
     createPost(e){
         e.preventDefault()
@@ -27,7 +29,24 @@ class Posts {
             this.newPostCountry.value = ''
             this.render()
         })
-    
+    }
+    handlePostClick(e){
+       this.togglePosts(e)
+    }
+    togglePosts(e){
+        const li = e.target
+        li.contentEditable = true
+        li.focus()
+        li.classList.add('editable')
+    }
+    updatePost(e){
+        const li = e.target
+        li.contentEditable = false
+        li.classList.remove('editable')
+        const newValue = li.innerHTML
+        const id = li.dataset.id
+       // console.log(id)
+        this.adapter.updatePost(newValue, id)
     }
 
     fetchAndLoadPosts() {

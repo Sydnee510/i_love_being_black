@@ -20,7 +20,19 @@ class PostsAdapter {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({post })
+            body: JSON.stringify({post }),
         }).then(res => res.json())
+    }
+    updatePost(value, id){
+        const post = {
+            content: value,
+        }
+        return fetch(`${this.baseUrl}/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ post }),
+        }) .then(res => res.json())
     }
 }
