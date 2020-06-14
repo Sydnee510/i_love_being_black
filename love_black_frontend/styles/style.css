@@ -5,3 +5,11 @@
     width: 200px;
     height: 150px; 
 }
+li  {
+    border-radius: 25px;
+    background: gray;
+    padding: 20px; 
+    width: 300px;
+    height: 80px; 
+    list-style-type:none;
+}
