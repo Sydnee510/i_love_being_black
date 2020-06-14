@@ -7,8 +7,17 @@ class Posts {
     }
 
     fetchAndLoadPosts() {
-        this.adapter.getPosts().then(posts => {
-            console.log(posts)
+        this.adapter
+        .getPosts()
+        .then(posts => {
+            posts.forEach(post => this.posts.push(post))
         })
+        .then(() => {
+            this.render()
+        })
+    }
+    render(){
+        const postsContainer = document.getElementById("posts-container")
+        postsContainer.innerHTML = 'my posts here'
     }
 }
