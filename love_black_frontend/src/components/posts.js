@@ -22,6 +22,9 @@ class Posts {
         const co = this.newPostCountry.value
         this.adapter.createPost(value, st, co).then(post => {
             this.posts.push(new Post(post))
+            this.newPostContent.value = ''
+            this.newPostState.value = ''
+            this.newPostCountry.value = ''
             this.render()
         })
     
