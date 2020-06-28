@@ -23,11 +23,11 @@ class PostsAdapter {
             body: JSON.stringify({ post }),
         }).then(res => res.json())
     }
-    deletePost(val, url) {
+    deletePost(val) {
         return fetch(this.baseUrl + '/' + val, {
-          method: 'delete'
+          method: 'DELETE'
         })
-        .then(response => response.json());
+        //.then(response => response.json());
       }
     // deletePost(value, id){
     //     const post = {

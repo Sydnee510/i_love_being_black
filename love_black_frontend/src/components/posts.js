@@ -14,7 +14,7 @@ class Posts {
         this.newPostLikes = document.getElementById('new-post-likes')
         this.postForm = document.getElementById('new-post-form')
         this.postForm.addEventListener('submit', this.createPost.bind(this))
-        // this.deleteform = document.getElementById('myBtn')
+        // this.deleteform = document.getElementById('')
         // this.deleteform.addEventListener('click', this.deletePost.bind(this))
     //    this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
     //     this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
@@ -31,29 +31,41 @@ class Posts {
             this.newPostCountry.value = ''
             this.render()
             //this.deletePost()
-            
         })
     }
-    deletePost(){
-        let button = document.getElementById(`${this.id}`)
-        this.adapter.deletePost(val, id).then(post => {
-            this.delete(button)
-        })
-       
-    }
-    delete(button){
-        button.addEventListener('click', function(e){
-         e.preventDefault()
-    
-        e.target.parentElement.remove();
+    delete(){
+        // console.log('deleting')
+        document.getElementById('posts-container').addEventListener('click', function(event){
+            console.dir(event);
+
+            const isButton = event.target.nodeName === "BUTTON";
+            if (!isButton) return;
+            event.target.parentElement.remove();
+
         })
     }
+    // deletePost(){
+    //     //let posts = document.getElementsByClassName('posts-container')
+    //     let button = document.getElementById(`${this.id}`)
+    //     this.adapter.deletePost(val, id).then(post => {
+    //     this.delete(button)
+    //     })
+    // }
+    // delete(button){
+    //     button.addEventListener('click', function(e){
+    //      e.preventDefault()
+    //      fetch(`http://localhost:3000/posts/${e.target.parentNode.dataset.id}`, {
+    //                         method: "DELETE"
+    //                 })
+    //                         e.target.parentElement.remove();
+    //             })
+    // }
     // appendPost(){
-    //    // let posts = document.getElementsByClassName('posts-container')
-    //     //let li = document.createElement('li')
-    //     //li.setAttribute('data-id', this.id)
-    //    // li.setAttribute('style', "list-style-type:none")
-    //   //  li.innerHTML = `${this.content}, ${this.state}, ${this.country}, ${this.likes}`
+    //    let posts = document.getElementsByClassName('posts-container')
+    //     let li = document.createElement('li')
+    //     li.setAttribute('data-id', this.id)
+    //    li.setAttribute('style', "list-style-type:none")
+    //    li.innerHTML = `${this.content}, ${this.state}, ${this.country}, ${this.likes}`
     //     let solveForm = `<button type="button" id="${this.id}" class="solve-post"> Solve </button>`
     //     li.insertAdjacentHTML('beforeend', solveForm)
     //     posts[0].append(li)
@@ -61,15 +73,16 @@ class Posts {
     //     this.solve(button)
     // }
 
-    // solve(button){
-    //     button.addEventListener('click', function(e){
-    //         e.preventDefault()
-    //         fetch(`http://localhost:3000/posts/${e.target.parentNode.dataset.id}`, {
-    //                 method: "DELETE"
-    //         })
-    //                 e.target.parentElement.remove();
-    //     })
-    // }
+    solve(){
+        button.addEventListener('click', function(e){
+            e.preventDefault()
+            console.log(deleting)
+            // fetch(`http://localhost:3000/posts/${e.target.parentNode.dataset.id}`, {
+            //         method: "DELETE"
+            // })
+                    e.target.parentElement.remove();
+        })
+    }
     // handlePostClick(e){
     //    this.togglePosts(e)
     // }
@@ -107,6 +120,8 @@ class Posts {
    
     render(){
        // this.posts = []
+      // this.deletePost
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
+        this.delete();
     }
 }

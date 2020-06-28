@@ -7,6 +7,6 @@ class Post {
         this.likes = postJSON.likes
     }
     renderLi(){
-        return `<li data-id=${this.id}>${this.content}, ${this.state}, ${this.country}, ${this.likes} likes <button id="myBtn" type="button" button-id="${this.id}" class="delete-post"> DELETE </button></li> `
+        return `<li data-id=${this.id}>${this.content}, ${this.state}, ${this.country}, ${this.likes} likes <button type="button" id=${this.id} class="delete-post"> DELETE </button></li> `
     }
 }
