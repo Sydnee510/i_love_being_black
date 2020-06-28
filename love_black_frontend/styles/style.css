@@ -22,3 +22,6 @@ li  {
     height: 80px; 
     list-style-type:none;
 }
+li button{
+    background-color: tomato;
+}

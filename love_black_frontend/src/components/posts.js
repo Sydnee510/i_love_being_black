@@ -14,8 +14,10 @@ class Posts {
         this.newPostLikes = document.getElementById('new-post-likes')
         this.postForm = document.getElementById('new-post-form')
         this.postForm.addEventListener('submit', this.createPost.bind(this))
-        this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
-        this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
+        // this.deleteform = document.getElementById('myBtn')
+        // this.deleteform.addEventListener('click', this.deletePost.bind(this))
+    //    this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
+    //     this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
     }
     createPost(e){
         e.preventDefault()
@@ -28,26 +30,65 @@ class Posts {
             this.newPostState.value = ''
             this.newPostCountry.value = ''
             this.render()
+            //this.deletePost()
+            
         })
     }
-    handlePostClick(e){
-       this.togglePosts(e)
+    deletePost(){
+        let button = document.getElementById(`${this.id}`)
+        this.adapter.deletePost(val, id).then(post => {
+            this.delete(button)
+        })
+       
     }
-    togglePosts(e){
-        const li = e.target
-        li.contentEditable = true
-        li.focus()
-        li.classList.add('editable')
+    delete(button){
+        button.addEventListener('click', function(e){
+         e.preventDefault()
+    
+        e.target.parentElement.remove();
+        })
     }
-    updatePost(e){
-        const li = e.target
-        li.contentEditable = false
-        li.classList.remove('editable')
-        const newValue = li.innerHTML
-        const id = li.dataset.id
-       // console.log(id)
-        this.adapter.updatePost(newValue, id)
-    }
+    // appendPost(){
+    //    // let posts = document.getElementsByClassName('posts-container')
+    //     //let li = document.createElement('li')
+    //     //li.setAttribute('data-id', this.id)
+    //    // li.setAttribute('style', "list-style-type:none")
+    //   //  li.innerHTML = `${this.content}, ${this.state}, ${this.country}, ${this.likes}`
+    //     let solveForm = `<button type="button" id="${this.id}" class="solve-post"> Solve </button>`
+    //     li.insertAdjacentHTML('beforeend', solveForm)
+    //     posts[0].append(li)
+    //     let button = document.getElementById(`${this.id}`)
+    //     this.solve(button)
+    // }
+
+    // solve(button){
+    //     button.addEventListener('click', function(e){
+    //         e.preventDefault()
+    //         fetch(`http://localhost:3000/posts/${e.target.parentNode.dataset.id}`, {
+    //                 method: "DELETE"
+    //         })
+    //                 e.target.parentElement.remove();
+    //     })
+    // }
+    // handlePostClick(e){
+    //    this.togglePosts(e)
+    // }
+    // togglePosts(e){
+    //     const li = e.target
+    //     li.contentEditable = true
+    //     li.focus()
+    //     li.classList.add('editable')
+    // }
+    // updatePost(e){
+    //     const li = e.target
+    //     li.contentEditable = false
+    //     li.classList.remove('editable')
+    //     const newValue = li.innerHTML
+    //     const id = li.dataset.id
+    //    // console.log(id)
+    //     this.adapter.updatePost(newValue, id).then(post => {
+    //         this.posts.push(post)
+    // })}
 
     fetchAndLoadPosts() {
         this.adapter
@@ -60,7 +101,12 @@ class Posts {
             this.render()
         })
     }
+    // empty(){
+        
+    // }
+   
     render(){
+       // this.posts = []
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
     }
 }
