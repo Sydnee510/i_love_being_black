@@ -6814,3 +6814,263 @@ Processing by PostsController#index as */*
 Completed 200 OK in 41ms (Views: 40.7ms | ActiveRecord: 0.2ms | Allocations: 1280)
 
 
+Started GET "/posts" for ::1 at 2020-06-29 15:27:31 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 1.5ms | Allocations: 6948)
+
+
+Started DELETE "/posts/41" for ::1 at 2020-06-29 15:27:37 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"41", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (3.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 1522)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:27:44 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1133)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:28:10 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"Black lives matter!!", "state"=>"Wahington", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Black lives matter!!"], ["state", "Wahington"], ["country", "US"], ["created_at", "2020-06-29 22:28:10.042053"], ["updated_at", "2020-06-29 22:28:10.042053"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 2712)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:28:24 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 1294)
+
+
+Started DELETE "/posts/42" for ::1 at 2020-06-29 15:28:26 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"42", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (2.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 42]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 1052)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:28:28 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1116)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:28:58 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"BLM!! BLM!! BLm!!", "state"=>"Texas", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "BLM!! BLM!! BLm!!"], ["state", "Texas"], ["country", "US"], ["created_at", "2020-06-29 22:28:58.329742"], ["updated_at", "2020-06-29 22:28:58.329742"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2474)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:29:05 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1279)
+
+
+Started DELETE "/posts/43" for ::1 at 2020-06-29 15:29:07 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"43", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (2.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 43]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 1052)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:29:09 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1117)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:48:10 -0700
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 675)
+
+
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/post.rb:5:in `<class:Post>'
+app/models/post.rb:1:in `<main>'
+app/controllers/posts_controller.rb:3:in `index'
+Started GET "/posts" for ::1 at 2020-06-29 15:48:40 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.4ms | Allocations: 6887)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:48:48 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"1", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 27ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 2544)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:48:51 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1135)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:48:56 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"1", "state"=>"1", "country"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (3.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "1"], ["state", "1"], ["country", "1"], ["created_at", "2020-06-29 22:48:56.190990"], ["updated_at", "2020-06-29 22:48:56.190990"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 6.3ms | Allocations: 2587)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:48:59 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1277)
+
+
+Started DELETE "/posts/44" for ::1 at 2020-06-29 15:49:00 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"44", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (3.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 44]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 1484)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:53:23 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 0.8ms | Allocations: 6566)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:53:39 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"help me", "state"=>"California", "country"=>"CASS"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 985)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:53:46 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1120)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:54:03 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"ghdghd", "state"=>"ddd", "country"=>"CAS"}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 814)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 15:54:11 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"eghgehe", "state"=>"ee", "country"=>"DE"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "eghgehe"], ["state", "ee"], ["country", "DE"], ["created_at", "2020-06-29 22:54:11.968361"], ["updated_at", "2020-06-29 22:54:11.968361"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.3ms | Allocations: 2487)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 15:59:49 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 0.8ms | Allocations: 6736)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:00:00 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hhhhhh", "state"=>"gf", "country"=>"gf"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1002)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:00:22 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"ghgjh", "state"=>"gggg", "country"=>"gg"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "ghgjh"], ["state", "gggg"], ["country", "gg"], ["created_at", "2020-06-29 23:00:22.494292"], ["updated_at", "2020-06-29 23:00:22.494292"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 3.3ms | Allocations: 2493)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:00:29 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1439)
+
+
+Started DELETE "/posts/46" for ::1 at 2020-06-29 16:00:35 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"46", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (3.4ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 46]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 1174)
+
+
+Started DELETE "/posts/45" for ::1 at 2020-06-29 16:00:37 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"45", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mPost Destroy (2.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 45]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 1053)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:00:39 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1116)
+
+
