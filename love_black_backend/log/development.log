@@ -7074,3 +7074,50 @@ Processing by PostsController#index as */*
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1116)
 
 
+Started GET "/posts" for ::1 at 2020-06-29 16:07:21 -0700
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 9.0ms | ActiveRecord: 2.9ms | Allocations: 6983)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:07:23 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1133)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:07:36 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hghghgh", "state"=>"gggg", "country"=>"12"}}
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2133)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:07:48 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"ghghgh", "state"=>"ffff", "country"=>"as"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 829)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:08:00 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hfghff", "state"=>"dddd", "country"=>"AS"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (3.2ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hfghff"], ["state", "dddd"], ["country", "AS"], ["created_at", "2020-06-29 23:08:00.612968"], ["updated_at", "2020-06-29 23:08:00.612968"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 6.5ms | Allocations: 2607)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:08:18 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1277)
+
+
