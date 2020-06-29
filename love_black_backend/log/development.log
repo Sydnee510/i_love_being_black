@@ -7121,3 +7121,119 @@ Processing by PostsController#index as */*
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1277)
 
 
+Started GET "/posts" for ::1 at 2020-06-29 16:10:13 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 29ms (Views: 18.3ms | ActiveRecord: 1.5ms | Allocations: 6873)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:10:27 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hghghgh", "state"=>"gggg", "country"=>"GG"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hghghgh"], ["state", "gggg"], ["country", "GG"], ["created_at", "2020-06-29 23:10:27.894985"], ["updated_at", "2020-06-29 23:10:27.894985"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 3.8ms | Allocations: 2609)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:10:50 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"gjgjhgj", "state"=>"Dasd", "country"=>"DA"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "gjgjhgj"], ["state", "Dasd"], ["country", "DA"], ["created_at", "2020-06-29 23:10:50.801562"], ["updated_at", "2020-06-29 23:10:50.801562"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 2503)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:11:03 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"kgkgkg", "state"=>"1234", "country"=>"DA"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 916)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:11:30 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hvhghvh", "state"=>"ghgjhgj", "country"=>"ss"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 825)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:16:10 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 1.8ms | Allocations: 7160)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:16:19 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hghghgh", "state"=>"ffff", "country"=>"gds"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1349)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:16:50 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"gfgfgf", "state"=>"gggg", "country"=>"aa"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 700)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:18:09 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 21.7ms | ActiveRecord: 0.9ms | Allocations: 7194)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:18:19 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"ghgjhgjh", "state"=>"gggg", "country"=>"dd"}}
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 972)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:18:38 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"jkghg", "state"=>"vgvg", "country"=>"Da"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "jkghg"], ["state", "vgvg"], ["country", "Da"], ["created_at", "2020-06-29 23:18:38.262723"], ["updated_at", "2020-06-29 23:18:38.262723"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 3.5ms | Allocations: 2503)
+
+
+Started GET "/posts" for ::1 at 2020-06-29 16:19:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 0.9ms | Allocations: 7320)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:19:32 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"gygygyg", "state"=>"hghghg", "country"=>"DA"}}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 972)
+
+
+Started POST "/posts" for ::1 at 2020-06-29 16:19:47 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hhghjgh", "state"=>"Coun", "country"=>"CS"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hhghjgh"], ["state", "Coun"], ["country", "CS"], ["created_at", "2020-06-29 23:19:47.256340"], ["updated_at", "2020-06-29 23:19:47.256340"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.5ms | Allocations: 2501)
+
+
