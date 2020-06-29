@@ -24,6 +24,7 @@ class PostsController < ApplicationController
         end
     end
     def destroy
+       # binding.pry
         @post = Post.find(params[:id])
         @post.delete
         render json: {postId: @post.id}
