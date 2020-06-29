@@ -30,45 +30,9 @@ class PostsAdapter {
                 headers: {
                     'content-type': 'application/json'
                 },
-               // body: JSON.stringify({ post }),
             }) .then(res => res.json())
         }
-    // deletePost(val) {
-    //     return fetch(this.baseUrl + '/' + val, {
-    //       method: 'DELETE'
-    //     })
-    //  //  .then(res => res.json())
-    //   }
-     // () => getPosts()
-    // deletePost(value, id){
-    //     const post = {
-    //         content: value,
-    //     }
-    //    return fetch(this.baseUrl/`${id}`, {
-    //         method: "DELETE",
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ post }),
-    // })
-    // .then(res => res.json()
-    // .then(json => {
-    //     return json;
-    //   }))
-    //         // e.target.parentElement.remove();
-    // }
-
-    
-    // solve(button){
-    //     button.addEventListener('click', function(e){
-    //         e.preventDefault()
-    //         fetch(`http://localhost:3000/posts/${e.target.parentNode.dataset.id}`, {
-    //                 method: "DELETE"
-    //         })
-    //                 e.target.parentElement.remove();
-    //     })
-    // }
-
+ }
     // updatePost(value, id){
     //     const post = {
     //         content: value,
@@ -81,4 +45,3 @@ class PostsAdapter {
     //         body: JSON.stringify({ post }),
     //     }) .then(res => res.json())
     // }
-}

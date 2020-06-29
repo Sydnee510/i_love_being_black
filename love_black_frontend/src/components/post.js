@@ -1,6 +1,5 @@
 class Post {
     constructor(postJSON){
-       //this.adapter = new PostsAdapter()
         this.id = postJSON.id
         this.content = postJSON.content
         this.state = postJSON.state 
@@ -10,9 +9,6 @@ class Post {
     renderLi(){
         return `<li data-id=${this.id}>${this.content}, ${this.state}, ${this.country}, ${this.likes} likes <button type="button" id=${this.id} class="delete-post"> DELETE </button></li> `
     }
-
-    //onclick="() => ${this.adapter.deletePost(this.id)}"
-    //${this.adapter.deletePost(this.id)}
 }
 
 
