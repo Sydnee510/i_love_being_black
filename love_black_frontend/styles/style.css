@@ -22,6 +22,8 @@ li  {
     height: 80px; 
     list-style-type:none;
 }
-li button{
+.delete-post{
     background-color: tomato;
 }
+
+  
