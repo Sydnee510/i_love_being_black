@@ -65,6 +65,13 @@ class Posts {
             posts.forEach(post => this.posts.push(new Post(post)))
             console.log(this.posts)
         })
+        // if (this.comments) {
+        //     this.comments.forEach(function(comment){
+        //         let newComment = new Comment(comment)
+        //         newComment.createComments()
+        //     })
+        // }
+        // Comment.newCommentForm(this.id)
         .then(() => {
             this.render()
         })
