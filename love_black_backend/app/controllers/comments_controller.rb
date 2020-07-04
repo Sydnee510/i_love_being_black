@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
         render json: CommentSerializer.new(comment, options)
     end 
     def create 
+        comment = Comment.find(params[:post_id])
         comment = Comment.new(comment_params)
         if comment.save
         render json: CommentSerializer.new(comment)    
