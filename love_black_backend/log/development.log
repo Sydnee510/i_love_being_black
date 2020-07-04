@@ -7986,3 +7986,96 @@ FOREIGN KEY ("post_id")
   [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2020-07-03 18:46:40 -0700
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 23.2ms | ActiveRecord: 2.4ms | Allocations: 8124)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 18:46:45 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1458)
+
+
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "I want police brutality to stop"], ["state", "California"], ["country", "US"], ["likes", 3], ["created_at", "2020-07-04 01:58:17.199347"], ["updated_at", "2020-07-04 01:58:17.199347"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "My husband was killed by law enforcement 3 years ago"], ["state", "Georgia"], ["country", "US"], ["likes", 2], ["created_at", "2020-07-04 01:58:17.209842"], ["updated_at", "2020-07-04 01:58:17.209842"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "MLK was a great leader for the black community"], ["state", "California"], ["country", "US"], ["likes", 1], ["created_at", "2020-07-04 01:58:17.241062"], ["updated_at", "2020-07-04 01:58:17.241062"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["content", "Right now we all need to be close to our loved ones"], ["state", "Georgia"], ["country", "US"], ["likes", 0], ["created_at", "2020-07-04 01:58:17.251195"], ["updated_at", "2020-07-04 01:58:17.251195"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (3.2ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "I felt this from the bottom of my heart"], ["post_id", 58], ["created_at", "2020-07-04 01:58:17.298080"], ["updated_at", "2020-07-04 01:58:17.298080"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "We are all in this together"], ["post_id", 55], ["created_at", "2020-07-04 01:58:17.311649"], ["updated_at", "2020-07-04 01:58:17.311649"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "We need more modern day leaders like MLK!!"], ["post_id", 57], ["created_at", "2020-07-04 01:58:17.320650"], ["updated_at", "2020-07-04 01:58:17.320650"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "May you recieve blessings to your entire family."], ["post_id", 56], ["created_at", "2020-07-04 01:58:17.327690"], ["updated_at", "2020-07-04 01:58:17.327690"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts" for ::1 at 2020-07-03 18:58:27 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 1.2ms | Allocations: 8716)
+
+
+Started GET "/" for ::1 at 2020-07-03 18:59:07 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/syd/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.1ms | Allocations: 315)
+Completed 200 OK in 38ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 1593)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 18:59:09 -0700
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 2160)
+
+
+Started GET "/comments" for ::1 at 2020-07-03 18:59:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'

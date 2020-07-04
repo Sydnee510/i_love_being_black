@@ -11,4 +11,9 @@ two = Post.create(content: "My husband was killed by law enforcement 3 years ago
 three = Post.create(content: "MLK was a great leader for the black community", state: "California", country: "US", likes: 1)
 four = Post.create(content: "Right now we all need to be close to our loved ones", state: "Georgia", country: "US", likes: 0)
 
+red = Comment.create(text: "I felt this from the bottom of my heart", post: four)
+blue = Comment.create(text: "We are all in this together", post: one)
+yellow = Comment.create(text: "We need more modern day leaders like MLK!!", post: three)
+green = Comment.create(text: "May you recieve blessings to your entire family.", post: two)
+
 
