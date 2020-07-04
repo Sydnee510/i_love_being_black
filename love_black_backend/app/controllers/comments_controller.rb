@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
     def index
         @comments = Comment.all 
-        render json: @comments
+        render json: @comments, include: [:post]
     end
     def show 
         @comment = Comment.find(params[:id])
-        render json: @comment, status: 200
+        render json: @comment, include: [:post], status: 200
     end 
     def create 
         @comment = Comment.new(comment_params)

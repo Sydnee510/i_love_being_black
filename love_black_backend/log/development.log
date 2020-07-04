@@ -8079,3 +8079,92 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/comments" for ::1 at 2020-07-03 19:01:06 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 18.9ms | ActiveRecord: 1.1ms | Allocations: 5760)
+
+
+Started GET "/comments" for ::1 at 2020-07-03 19:02:27 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 2.4ms | Allocations: 17034)
+
+
+Started GET "/comments/1" for ::1 at 2020-07-03 19:04:11 -0700
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 857)
+
+
+Started GET "/comments/1" for ::1 at 2020-07-03 19:05:11 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/syd/i_love_being_black/love_black_backend/app/controllers/comments_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting end
+...omment, include: [:post] status: 200
+...                         ^~~~~~):
+  
+app/controllers/comments_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/comments_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/comments/1" for ::1 at 2020-07-03 19:05:26 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `show'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 1.5ms | Allocations: 11787)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 19:06:09 -0700
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 2126)
+
+
+Started GET "/posts/1" for ::1 at 2020-07-03 19:06:20 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 712)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=1):
+  
+app/controllers/posts_controller.rb:7:in `show'
+Started GET "/posts/40" for ::1 at 2020-07-03 19:06:32 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `show'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 743)
+
+
+Started GET "/comments/1" for ::1 at 2020-07-03 19:06:56 -0700
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `show'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1778)
+
+
