@@ -32,6 +32,24 @@ class Posts {
             this.render()
         })
     }
+    createComments(comments) {
+        let commentsArray = []
+        if(comments) {
+            comments.forEach(cmt => {
+                commentsArray.push(new Comment(cmt));
+            });
+        }
+        return commentsArray.sort(Comment.compare);
+    }
+
+    createComment(text) {
+        let attributes = {
+            text: text,
+            created_at: created_at,
+            post_id: this.id 
+        };
+        return new Comment(attributes);
+    }
     deletePost(e){
         e.preventDefault()
         const isButton = e.target.nodeName === "BUTTON";
