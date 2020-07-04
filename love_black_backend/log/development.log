@@ -8168,3 +8168,66 @@ Processing by CommentsController#show as HTML
 Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1778)
 
 
+Started GET "/comments/1" for ::1 at 2020-07-03 19:23:45 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 3.0ms | Allocations: 76309)
+
+
+  
+NameError (undefined local variable or method `comment' for #<CommentsController:0x00007f8322aa7d30>
+Did you mean?  @comment):
+  
+app/controllers/comments_controller.rb:9:in `show'
+Started GET "/comments/1" for ::1 at 2020-07-03 19:25:36 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 2.9ms | Allocations: 75520)
+
+
+  
+NameError (undefined local variable or method `comment' for #<CommentsController:0x00007f83200b33f8>
+Did you mean?  @comment):
+  
+app/controllers/comments_controller.rb:9:in `show'
+Started GET "/comments/1" for ::1 at 2020-07-03 19:26:24 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.7ms | Allocations: 75475)
+
+
+  
+NameError (undefined local variable or method `comment' for #<CommentsController:0x00007f831f7bfb98>
+Did you mean?  @comment):
+  
+app/controllers/comments_controller.rb:9:in `show'
+Started GET "/comments/1" for ::1 at 2020-07-03 19:27:24 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5134)
+
+
+Started GET "/comments/1" for ::1 at 2020-07-03 19:28:12 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9:in `show'
+Completed 200 OK in 54ms (Views: 42.7ms | ActiveRecord: 3.7ms | Allocations: 13584)
+
+
