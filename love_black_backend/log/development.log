@@ -8231,3 +8231,37 @@ Processing by CommentsController#show as HTML
 Completed 200 OK in 54ms (Views: 42.7ms | ActiveRecord: 3.7ms | Allocations: 13584)
 
 
+Started GET "/comments/1" for ::1 at 2020-07-03 19:36:49 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 4903)
+
+
+Started GET "/comments/1" for ::1 at 2020-07-03 19:41:14 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `show'
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `show'
+Completed 200 OK in 52ms (Views: 24.3ms | ActiveRecord: 4.6ms | Allocations: 12335)
+
+
+Started GET "/comments" for ::1 at 2020-07-03 19:44:02 -0700
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 1683)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 19:44:16 -0700
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 2128)
+
+
