@@ -1,11 +1,13 @@
 class PostsAdapter {
     constructor() {
-        this.baseUrl = 
+        this.baseUrl = 'http://localhost:3000'
+        this.postUrl = 
         'http://localhost:3000/posts'
+        this.commentUrl = 'http://localhost:3000/comments'
     }
 
     getPosts() {
-        return fetch(this.baseUrl)
+        return fetch(this.postUrl)
         .then(res => res.json()
         )
     }
@@ -15,7 +17,7 @@ class PostsAdapter {
             state: st,
             country: co,
         }
-        return fetch(this.baseUrl,{
+        return fetch(this.postUrl,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +27,7 @@ class PostsAdapter {
     }
 
     deletePost(id){
-            return fetch(`${this.baseUrl}/${id}`, {
+            return fetch(`${this.postUrl}/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
