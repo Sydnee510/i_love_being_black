@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
     def index
         posts = Post.all 
-        options = {
-            include: [:comments]
-        }
-        render json: PostSerializer.new(posts, options)
+        # options = {
+        #     include: [:comments]
+        # }
+        render json: PostSerializer.new(posts)
         # render json: posts, status: 200
     end
     def show 
@@ -35,8 +35,10 @@ class PostsController < ApplicationController
     end
     def destroy
         post = Post.find(params[:id])
+        post.comments.each { |comment| comment.delete }
         post.delete
-        render json: PostSerializer.new(post)
+        render json: post.to_json
+        #render json: PostSerializer.new(post)
         #render json: {postId: post.id}
     end 
     private
