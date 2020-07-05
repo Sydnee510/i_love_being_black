@@ -2,6 +2,7 @@ class Posts {
     constructor() {
         this.posts = []
         this.adapter = new PostsAdapter()
+        this.commentsAdapter = new CommentsAdapter()
         this.initBindingsAndEventListeners()
         this.fetchAndLoadPosts()
     }
@@ -32,24 +33,19 @@ class Posts {
             this.render()
         })
     }
-    createComments(comments) {
-        let commentsArray = []
-        if(comments) {
-            comments.forEach(cmt => {
-                commentsArray.push(new Comment(cmt));
-            });
-        }
-        return commentsArray.sort(Comment.compare);
-    }
+    // createComment(e) {
+    //     let attributes = {
+    //         text: text,
+    //         post_id: this.id 
+    //     };
+    //     return new Comment(attributes);
+    // }
+    // createComments(e) {
+    //     e.preventDefault()
+    //     const text = new-comment-text
+        
+    // }
 
-    createComment(text) {
-        let attributes = {
-            text: text,
-            created_at: created_at,
-            post_id: this.id 
-        };
-        return new Comment(attributes);
-    }
     deletePost(e){
         e.preventDefault()
         const isButton = e.target.nodeName === "BUTTON";
@@ -76,11 +72,29 @@ class Posts {
             this.render()
         })
     }
+    fetchAndLoadComments() {
+        const allcomments = []
+        this.commentsAdapter.getComments()
+        .then(comments => {
+            comments.forEach(comment => allcomments.push(new Comment(comment.attributes.text, comment.id, comment.attributes.posts_id)))
+            console.log(allcomments)
+        })
+        // .then(comments => {
+        //     comments.forEach(comment => {
+        //         const cmt = new Comment(comment.attributes.text)
+        //         allcomments.push(cmt)
+        //     console.log(allcomments)
+        // })
+        //   })
+          .then(() => {
+            this.render()
+        })
+        }
    
     render(){
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
     }
-}
+    }
     
     // handlePostClick(e){
     //    this.togglePosts(e)
