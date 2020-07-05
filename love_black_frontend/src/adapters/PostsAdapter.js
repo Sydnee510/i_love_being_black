@@ -1,9 +1,9 @@
 class PostsAdapter {
     constructor() {
-        this.baseUrl = 'http://localhost:3000'
+        // this.baseUrl = 'http://localhost:3000'
         this.postUrl = 
         'http://localhost:3000/posts'
-        this.commentUrl = 'http://localhost:3000/comments'
+        // this.commentUrl = 'http://localhost:3000/comments'
     }
 
     getPosts() {
