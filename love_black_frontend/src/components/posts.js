@@ -31,6 +31,7 @@ class Posts {
             this.newPostState.value = ''
             this.newPostCountry.value = ''
             this.render()
+            //alert("post created!")
         })
     }
     // createComment(e) {
@@ -50,17 +51,29 @@ class Posts {
         e.preventDefault()
         const isButton = e.target.nodeName === "BUTTON";
             if (!isButton) return;
+            alert("post deleted!")
             e.target.parentElement.remove();   
             this.adapter.deletePost(e.target.id)
+
     }
    
     fetchAndLoadPosts() {
+       const newcomments = []
         this.adapter
         .getPosts()
         .then(posts => {
             posts.forEach(post => this.posts.push(new Post(post)))
             console.log(this.posts)
         })
+        // .then( posts =>{
+        //     posts.newecomments.forEach(comment => {
+        //         const newComment = new Comment(comment.text, comment.id, comment.posts_id)
+        //         this.posts.push(newComment)
+        //     })
+        // } )
+        // .then(() => {
+        //     this.fetchAndLoadComments() 
+        // })
         // if (this.comments) {
         //     this.comments.forEach(function(comment){
         //         let newComment = new Comment(comment)
