@@ -1,6 +1,6 @@
 I love Being Black
 
-This is a app made for advocates to have a safe place to share their stories about police Brutality, and give their thoughts and ideas about what we as a community can do to change it. Users can use this space to uplift eachother and spread kind words. Users will be able to create new posts, comment on posts, and also like posts that catch their attention. 
+This is a app made for advocates to have a safe place to share their stories about police Brutality, and give their thoughts and ideas about what we as a community can do to change it. Users can use this space to uplift eachother and spread kind words. Users will be able to create new posts, delete posts, comment on posts, and also like posts that catch their attention. 
 
 Clone this repo 
 https://github.com/Sydnee510/i_love_being_black
