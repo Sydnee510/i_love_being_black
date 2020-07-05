@@ -9410,3 +9410,101 @@ Processing by PostsController#index as */*
 Completed 200 OK in 28ms (Views: 17.1ms | ActiveRecord: 1.1ms | Allocations: 8761)
 
 
+Started GET "/posts" for ::1 at 2020-07-03 22:05:05 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 12.0ms | ActiveRecord: 3.2ms | Allocations: 9365)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 22:05:07 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 2762)
+
+
+Started DELETE "/posts/52" for ::1 at 2020-07-03 22:05:11 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"52", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `destroy'
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 52]]
+  ↳ app/controllers/posts_controller.rb:38:in `destroy'
+  [1m[36mPost Destroy (3.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 52]]
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 6.2ms | Allocations: 4939)
+
+
+Started GET "/posts" for ::1 at 2020-07-03 22:05:15 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.2ms | Allocations: 2602)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 09:01:27 -0700
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 11.0ms | ActiveRecord: 1.0ms | Allocations: 9204)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 09:02:01 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.2ms | Allocations: 2599)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 09:26:25 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 29.4ms | ActiveRecord: 1.0ms | Allocations: 9204)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 09:26:29 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 2599)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 21:28:34 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 11.3ms | ActiveRecord: 1.3ms | Allocations: 9204)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 21:28:36 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 2599)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 21:30:59 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 1.0ms | Allocations: 8575)
+
+
+Started GET "/posts" for ::1 at 2020-07-04 21:31:01 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2599)
+
+
