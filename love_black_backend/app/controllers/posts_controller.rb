@@ -1,18 +1,18 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all 
+        posts = Post.all 
         # options = {
         #     include: [:comments]
         # }
-        #render json: PostSerializer.new(posts)
-         render json: @posts, status: 200
+        render json: PostSerializer.new(posts)
+         #render json: @posts, status: 200
     end
     def show 
         post = Post.find(params[:id])
-        options = {
-            include: [:comments]
-        }
-        render json: PostSerializer.new(post, options)
+        # options = {
+        #     include: [:comments]
+        # }
+        render json: PostSerializer.new(post).serializable_hash
         #render json: @post, status: 200
     end 
     def create 
