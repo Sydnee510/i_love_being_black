@@ -12,7 +12,7 @@ class Post {
     renderLi(){
         return `<li data-id=${this.id}>${this.content}, ${this.state}, ${this.country}, comments: ${this.comment},  <button type="button" id=${this.id} class="delete-post"> DELETE </button> <div class="fb-like" data-href="http://localhost:3000/posts/${this.id}" data-width="" allign-text="right" data-layout="box_count" data-action="like" data-size="small" data-share="false"></div> 
         <form id = "new-comment-form">
-        <input type = "text" id=  font-size: medium;" placeholder= "comment:">
+        <input type = "text" id="new-comment-text" font-size: "medium;" placeholder= "comment:">
         <input type = "submit" value="Comment">
         </form></li> `
     }
