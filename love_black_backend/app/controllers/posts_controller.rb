@@ -12,7 +12,8 @@ class PostsController < ApplicationController
         # options = {
         #     include: [:comments]
         # }
-        render json: PostSerializer.new(post).serialized_json
+        render json: PostSerializer.new(post).serializable_hash
+        #.serialized_json
         #.serializable_hash
         #render json: post, status: 200
     end 

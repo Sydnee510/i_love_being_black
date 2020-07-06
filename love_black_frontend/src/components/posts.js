@@ -46,21 +46,36 @@ class Posts {
     }
    
     fetchAndLoadPosts() {
+        //const cmts = []
         this.adapter
         .getPosts()
-        .then(posts => {
-            posts.forEach(post => this.posts.push(new Post(post)))
+        .then(posts=> {
+            posts.forEach(post => this.posts.push(new Post(post.id, post.attributes.content, post.attributes.state, post.attributes.country, post.attributes.likes, post.attributes.comments )))
             console.log(this.posts)
         })
         .then(() => {
             this.render()
         })
     }
+        // .then(posts => {
+        //     posts[0].attributes.comments.forEach(comment =>{
+        //         const cmt = new Comment(comment.text, comment.id, comment.post_id)
+        //         this.posts.push(cmt)
+        //         console.log(this.posts)
+        // })
+    // })
+        //     posts.forEach(post => this.posts.push(new Post(post)))
+        //     console.log(this.posts)
+        // })
+    //     .then(() => {
+    //         this.render()
+    //     })
+    // }
     fetchAndLoadComments() {
         const allcomments = []
         this.commentsAdapter.getComments()
         .then(comments => {
-            comments.forEach(comment => allcomments.push(new Comment(comment.attributes.text, comment.id, comment.attributes.posts_id)))
+            comments.forEach(comment => allcomments.push(new Comment(comment.attributes.text, comment.id, comment.attributes.post_id)))
             console.log(allcomments)
         })
         // .then(() => {
