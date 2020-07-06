@@ -1,15 +1,14 @@
 class PostsAdapter {
     constructor() {
-        // this.baseUrl = 'http://localhost:3000'
         this.postUrl = 
         'http://localhost:3000/posts'
-        // this.commentUrl = 'http://localhost:3000/comments'
     }
 
     getPosts() {
         return fetch(this.postUrl)
-        .then(res => res.json()
-        )
+        .then(res => res.json())
+        .then(json => json.data)
+        //.then(json => json.data)
     }
     createPost(value, st, co){
         const post = {
