@@ -1,6 +1,6 @@
 class Posts {
     constructor() {
-        this.posts = []
+         this.posts = []
         this.adapter = new PostsAdapter()
         this.commentsAdapter = new CommentsAdapter()
         this.initBindingsAndEventListeners()
@@ -34,18 +34,6 @@ class Posts {
             //alert("post created!")
         })
     }
-    // createComment(e) {
-    //     let attributes = {
-    //         text: text,
-    //         post_id: this.id 
-    //     };
-    //     return new Comment(attributes);
-    // }
-    // createComments(e) {
-    //     e.preventDefault()
-    //     const text = new-comment-text
-        
-    // }
 
     deletePost(e){
         e.preventDefault()
@@ -58,29 +46,12 @@ class Posts {
     }
    
     fetchAndLoadPosts() {
-       const newcomments = []
         this.adapter
         .getPosts()
         .then(posts => {
             posts.forEach(post => this.posts.push(new Post(post)))
             console.log(this.posts)
         })
-        // .then( posts =>{
-        //     posts.newecomments.forEach(comment => {
-        //         const newComment = new Comment(comment.text, comment.id, comment.posts_id)
-        //         this.posts.push(newComment)
-        //     })
-        // } )
-        // .then(() => {
-        //     this.fetchAndLoadComments() 
-        // })
-        // if (this.comments) {
-        //     this.comments.forEach(function(comment){
-        //         let newComment = new Comment(comment)
-        //         newComment.createComments()
-        //     })
-        // }
-        // Comment.newCommentForm(this.id)
         .then(() => {
             this.render()
         })
@@ -92,17 +63,10 @@ class Posts {
             comments.forEach(comment => allcomments.push(new Comment(comment.attributes.text, comment.id, comment.attributes.posts_id)))
             console.log(allcomments)
         })
-        // .then(comments => {
-        //     comments.forEach(comment => {
-        //         const cmt = new Comment(comment.attributes.text)
-        //         allcomments.push(cmt)
-        //     console.log(allcomments)
+        // .then(() => {
+        //     this.render()
         // })
-        //   })
-          .then(() => {
-            this.render()
-        })
-        }
+    }
    
     render(){
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
