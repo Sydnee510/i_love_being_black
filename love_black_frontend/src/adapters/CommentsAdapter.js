@@ -9,15 +9,18 @@ class CommentsAdapter {
         .then(json => json.data)
     }
 
-    postComments(data) {
-        return fetch(this.commentURL, {
+    createComment(value) {
+        const comment = {
+            text: value,
+        }
+        return fetch(this.commentURL,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({ comment }),
         })
         .then(resp => resp.json())
-        .catch(err => alert(err))
+        
     }
 }
