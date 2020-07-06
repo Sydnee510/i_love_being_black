@@ -11,7 +11,7 @@ class Comment {
     bindingsAndEventListeners(){
         this.commentsContainer = document.getElementById('comments-container')
         this.commentForm = document.getElementById('new-comment-form')
-        this.commentForm = addEventListener('submit', this.createComment.bind(this))
+        //this.commentForm = addEventListener('submit', this.createComment.bind(this))
         this.newCommentText = document.getElementById('new-comment-text')
     }
   
