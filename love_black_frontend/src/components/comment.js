@@ -5,7 +5,7 @@ class Comment {
         this.id = id
         this.post_id = post_id
         this.commentsAdapter = new CommentsAdapter()
-        this.bindingsAndEventListeners()
+       // this.bindingsAndEventListeners()
    
     }
     bindingsAndEventListeners(){

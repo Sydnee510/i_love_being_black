@@ -44,7 +44,6 @@ class Posts {
             this.adapter.deletePost(e.target.id)
 
     }
-   
     fetchAndLoadPosts() {
         //const cmts = []
         this.adapter
@@ -57,20 +56,6 @@ class Posts {
             this.render()
         })
     }
-        // .then(posts => {
-        //     posts[0].attributes.comments.forEach(comment =>{
-        //         const cmt = new Comment(comment.text, comment.id, comment.post_id)
-        //         this.posts.push(cmt)
-        //         console.log(this.posts)
-        // })
-    // })
-        //     posts.forEach(post => this.posts.push(new Post(post)))
-        //     console.log(this.posts)
-        // })
-    //     .then(() => {
-    //         this.render()
-    //     })
-    // }
     fetchAndLoadComments() {
         const allcomments = []
         this.commentsAdapter.getComments()
@@ -87,6 +72,27 @@ class Posts {
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
     }
     }
+   
+    // fetchAndLoadPosts() {
+    //     //const cmts = []
+    //     this.adapter.getPosts()
+    //     .then(posts => {
+    //         posts.forEach(post =>  {//console.log(post)
+            // const {id, content, state, country, likes, comments} = post.attributes
+            // = post.id, post.attributes.content, post.attributes.state, post.attributes.country, post.attributes.likes, post.attributes.comments  
+            //  console.log(post)
+                //this.posts.push(new Post(post.id, post.attributes.content, post.attributes.state, post.attributes.country, post.attributes.likes, post.attributes.comments )))
+               //   console.log(this.posts.comments.forEach(comment => comment))
+        // const allPosts = new Post({id, content, state, country, likes, comments})
+        // console.log(allPosts.id.comments)
+    //     })})
+    //     .then(() => {
+    //         this.render()
+    //     })
+    // }
+
+  
+
     
     // handlePostClick(e){
     //    this.togglePosts(e)
