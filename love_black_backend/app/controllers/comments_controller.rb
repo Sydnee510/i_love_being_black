@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
         #comment = Comment.find(params[:post_id])
         comment = Comment.new(comment_params)
         if comment.save
-        render json: CommentSerializer.new(comment).serialized_json    
+        render json: CommentSerializer.new(comment)   
         else 
             render :json => { :errors => comment.errors.full_messages }, :status => 422
         end

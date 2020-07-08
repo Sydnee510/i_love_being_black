@@ -1,13 +1,14 @@
 class Comment {
     constructor(text, id, post_id){
-        this.comments = []
+        // this.comments = []
         this.text = text
         this.id = id
         this.post_id = post_id
-        this.commentsAdapter = new CommentsAdapter()
+        // this.commentsAdapter = new CommentsAdapter()
        // this.bindingsAndEventListeners()
    
     }
+    /*
     bindingsAndEventListeners(){
         this.commentsContainer = document.getElementById('comments-container')
         this.commentForm = document.getElementById('new-comment-form')
@@ -29,5 +30,6 @@ class Comment {
     render(){
         this.commentsContainer.innerHTML = this.comments.map(comment => comment.renderLi()).join('')
     }
+    */
 
 }

@@ -15,7 +15,7 @@ class Posts {
         this.newPostLikes = document.getElementById('new-post-likes')
         this.postForm = document.getElementById('new-post-form')
         this.postForm.addEventListener('submit', this.createPost.bind(this))
-        this.postsContainer.addEventListener('click', this.deletePost.bind(this))
+        this.postsContainer.addEventListener('click', this.handleClick.bind(this))
     //    this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
     //     this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
     }
@@ -36,12 +36,46 @@ class Posts {
     }
 
     deletePost(e){
+        this.adapter.deletePost(e.target.id).then(res => {
+            for (let i = 0; i < this.posts.length; i++) {
+                if (this.posts[i].id === e.target.id) {
+                    this.posts.splice(i, 1)
+                    break;
+                }
+            }
+            this.render()
+        })
+    }
+    
+    handleClick(e) {
         e.preventDefault()
-        const isButton = e.target.nodeName === "BUTTON";
-            if (!isButton) return;
-            alert("post deleted!")
-            e.target.parentElement.remove();   
-            this.adapter.deletePost(e.target.id)
+        if (e.target.classList.contains('delete-post')) {
+            this.deletePost(e)
+        } else if (e.target.classList.contains('create-comment')) {
+            this.createComment(e)
+        }
+    }
+
+    createComment(e){
+        const value = e.target.previousElementSibling.value ? e.target.previousElementSibling.value : "unspecified comment"
+        const postId = e.target.getAttribute("data-id")
+
+        this.commentsAdapter.createComment(value, postId)
+            .then(comment => {
+                const commentAttributes = comment.data.attributes;
+                const newComment = new Comment(commentAttributes.text, commentAttributes.id, commentAttributes.post_id)
+
+                for (let i = 0; i < this.posts.length; i++) {
+                    if (this.posts[i].id === postId) {
+                        this.posts[i].comments.push(newComment)
+                        break;
+                    }
+                }
+
+                document.getElementById(`new-comment-form-${commentAttributes.post_id}`).reset()
+
+                this.render()
+            })
 
     }
     fetchAndLoadPosts() {
