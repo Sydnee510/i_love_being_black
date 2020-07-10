@@ -19,7 +19,7 @@ li  {
     background: green;
     padding: 20px; 
     width: 300px;
-    height: 80px; 
+    min-height: 80px; 
     list-style-type:none;
 }
 .delete-post{
