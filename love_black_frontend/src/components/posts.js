@@ -26,7 +26,8 @@ class Posts {
         const st = this.newPostState.value
         const co = this.newPostCountry.value
         this.adapter.createPost(value, st, co).then(post => {
-            this.posts.push(new Post(post))
+            const postAttributes = post.data.attributes;
+            this.posts.push(new Post(postAttributes.id, postAttributes.content, postAttributes.state, postAttributes.country))
             this.newPostContent.value = ''
             this.newPostState.value = ''
             this.newPostCountry.value = ''
@@ -100,7 +101,7 @@ class Posts {
             console.log(allcomments)
         })
     }
-    
+
     render(){
         this.postsContainer.innerHTML = this.posts.map(post => post.renderLi()).join('')
     }
