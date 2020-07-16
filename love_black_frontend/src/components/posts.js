@@ -16,8 +16,6 @@ class Posts {
         this.postForm = document.getElementById('new-post-form')
         this.postForm.addEventListener('submit', this.createPost.bind(this))
         this.postsContainer.addEventListener('click', this.handleClick.bind(this))
-    //    this.postsContainer.addEventListener('dblclick', this.handlePostClick.bind(this))
-    //     this.postsContainer.addEventListener('blur', this.updatePost.bind(this), true)
     }
 
     createPost(e){
@@ -61,22 +59,21 @@ class Posts {
 
     createComment(e){
         const value = e.target.previousElementSibling.value ? e.target.previousElementSibling.value : "unspecified comment"
-        const postId = e.target.getAttribute("data-id")
+        const postId = parseInt(e.target.getAttribute("data-id"))
 
         this.commentsAdapter.createComment(value, postId)
             .then(comment => {
                 const commentAttributes = comment.data.attributes;
-                const newComment = new Comment(commentAttributes.text, commentAttributes.id, commentAttributes.post_id)
-
+                const newComment = new Comment(commentAttributes.id, commentAttributes.text, commentAttributes.post_id)
+                
                 for (let i = 0; i < this.posts.length; i++) {
                     if (this.posts[i].id === postId) {
                         this.posts[i].comments.push(newComment)
                         break;
                     }
                 }
-
+                
                 document.getElementById(`new-comment-form-${commentAttributes.post_id}`).reset()
-
                 this.render()
             })
     }	
@@ -97,7 +94,7 @@ class Posts {
         const allcomments = []
         this.commentsAdapter.getComments()
         .then(comments => {
-            comments.forEach(comment => allcomments.push(new Comment(comment.attributes.text, comment.id, comment.attributes.post_id)))
+            comments.forEach(comment => allcomments.push(new Comment(comment.id, comment.attributes.text, comment.attributes.post_id)))
             console.log(allcomments)
         })
     }
@@ -107,25 +104,3 @@ class Posts {
     }
     }
 
-  
-
-    
-    // handlePostClick(e){
-    //    this.togglePosts(e)
-    // }
-    // togglePosts(e){
-    //     const li = e.target
-    //     li.contentEditable = true
-    //     li.focus()
-    //     li.classList.add('editable')
-    // }
-    // updatePost(e){
-    //     const li = e.target
-    //     li.contentEditable = false
-    //     li.classList.remove('editable')
-    //     const newValue = li.innerHTML
-    //     const id = li.dataset.id
-    //    // console.log(id)
-    //     this.adapter.updatePost(newValue, id).then(post => {
-    //         this.posts.push(post)
-    // })}
