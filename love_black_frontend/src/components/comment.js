@@ -1,7 +1,7 @@
 class Comment {
-    constructor(text, id, post_id){
-        this.text = text
+    constructor(id, text, post_id){
         this.id = id
+        this.text = text
         this.post_id = post_id
     }
 }
