@@ -5,7 +5,7 @@ class Post {
         this.state = state 
         this.country = country 
         this.likes = likes
-        this.comments = comments
+        this.comments = comments ? comments : []
     }
     renderComments(comments) {
         let cmtString = ''
