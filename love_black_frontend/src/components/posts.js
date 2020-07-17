@@ -37,7 +37,7 @@ class Posts {
     deletePost(e){
         this.adapter.deletePost(e.target.id).then(res => {
             for (let i = 0; i < this.posts.length; i++) {
-                if (this.posts[i].id === e.target.id) {
+                if (this.posts[i].id.toString() === e.target.id) {
                     this.posts.splice(i, 1)
                     break;
                 }
@@ -59,7 +59,7 @@ class Posts {
 
     createComment(e){
         const value = e.target.previousElementSibling.value ? e.target.previousElementSibling.value : "unspecified comment"
-        const postId = parseInt(e.target.getAttribute("data-id"))
+        const postId = e.target.getAttribute("data-id")
 
         this.commentsAdapter.createComment(value, postId)
             .then(comment => {
@@ -67,7 +67,9 @@ class Posts {
                 const newComment = new Comment(commentAttributes.id, commentAttributes.text, commentAttributes.post_id)
                 
                 for (let i = 0; i < this.posts.length; i++) {
-                    if (this.posts[i].id === postId) {
+                    // console.log(typeof this.posts[i].id)
+                    // console.log(typeof postId)
+                    if (this.posts[i].id.toString() === postId) {
                         this.posts[i].comments.push(newComment)
                         break;
                     }
