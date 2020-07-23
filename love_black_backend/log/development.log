@@ -26802,3 +26802,1075 @@ Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 4239)
 Completed 200 OK in 32ms (Views: 25.5ms | ActiveRecord: 5.8ms | Allocations: 10475)
 
 
+Started GET "/comments" for ::1 at 2020-07-16 18:21:10 -0700
+Started GET "/posts" for ::1 at 2020-07-16 18:21:10 -0700
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.4ms | Allocations: 7260)
+
+
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 113ms (Views: 93.0ms | ActiveRecord: 2.6ms | Allocations: 24412)
+
+
+Started POST "/comments" for ::1 at 2020-07-16 18:21:35 -0700
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"post_id"=>"58", "text"=>"Loyal to my loved ones"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Loyal to my loved ones"], ["post_id", 58], ["created_at", "2020-07-17 01:21:35.304015"], ["updated_at", "2020-07-17 01:21:35.304015"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 2673)
+
+
+Started POST "/posts" for ::1 at 2020-07-16 18:21:52 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"new post", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "new post"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-17 01:21:52.254946"], ["updated_at", "2020-07-17 01:21:52.254946"]]
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 144]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 3.5ms | Allocations: 3786)
+
+
+Started POST "/comments" for ::1 at 2020-07-16 18:22:03 -0700
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"post_id"=>"144", "text"=>"comment"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "comment"], ["post_id", 144], ["created_at", "2020-07-17 01:22:03.215113"], ["updated_at", "2020-07-17 01:22:03.215113"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 3.5ms | Allocations: 2451)
+
+
+Started DELETE "/posts/144" for ::1 at 2020-07-16 18:22:11 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"144", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 144], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 144]]
+  ↳ app/controllers/posts_controller.rb:40:in `destroy'
+  [1m[36mComment Destroy (3.2ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 82]]
+  ↳ app/controllers/posts_controller.rb:40:in `block in destroy'
+  [1m[36mPost Destroy (3.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 144]]
+  ↳ app/controllers/posts_controller.rb:41:in `destroy'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 7.1ms | Allocations: 2463)
+
+
+Started GET "/comments" for ::1 at 2020-07-16 18:22:17 -0700
+Processing by CommentsController#index as */*
+Started GET "/posts" for ::1 at 2020-07-16 18:22:17 -0700
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 2484)
+
+
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 1.0ms | Allocations: 7468)
+
+
+Started GET "/comments" for ::1 at 2020-07-16 18:22:29 -0700
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started GET "/posts" for ::1 at 2020-07-16 18:22:29 -0700
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Processing by PostsController#index as */*
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 2828)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 1.2ms | Allocations: 8759)
+
+
+Started GET "/comments" for ::1 at 2020-07-17 16:27:24 -0700
+Started GET "/posts" for ::1 at 2020-07-17 16:27:24 -0700
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 53ms (Views: 35.5ms | ActiveRecord: 2.3ms | Allocations: 9476)
+
+
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 116ms (Views: 96.5ms | ActiveRecord: 1.9ms | Allocations: 22470)
+
+
+Started GET "/posts" for ::1 at 2020-07-17 16:28:17 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/comments" for ::1 at 2020-07-17 16:28:17 -0700
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+Processing by CommentsController#index as */*
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 3789)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.7ms | Allocations: 10775)
+
+
+Started POST "/posts" for ::1 at 2020-07-17 16:32:05 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"I love my life", "state"=>"Maryland", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "I love my life"], ["state", "Maryland"], ["country", "US"], ["created_at", "2020-07-17 23:32:05.959468"], ["updated_at", "2020-07-17 23:32:05.959468"]]
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:22:in `create'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 145]]
+  ↳ app/controllers/posts_controller.rb:23:in `create'
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 3.6ms | Allocations: 3948)
+
+
+Started POST "/comments" for ::1 at 2020-07-17 16:32:47 -0700
+Processing by CommentsController#create as */*
+  Parameters: {"comment"=>{"post_id"=>"145", "text"=>"You should love yourself"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[36mComment Create (3.7ms)[0m  [1m[32mINSERT INTO "comments" ("text", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "You should love yourself"], ["post_id", 145], ["created_at", "2020-07-17 23:32:47.153535"], ["updated_at", "2020-07-17 23:32:47.153535"]]
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:16:in `create'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 6.8ms | Allocations: 2500)
+
+
+Started DELETE "/posts/145" for ::1 at 2020-07-17 16:33:17 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"145", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:39:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 145]]
+  ↳ app/controllers/posts_controller.rb:40:in `destroy'
+  [1m[36mComment Destroy (5.8ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 83]]
+  ↳ app/controllers/posts_controller.rb:40:in `block in destroy'
+  [1m[36mPost Destroy (9.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 145]]
+  ↳ app/controllers/posts_controller.rb:41:in `destroy'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 15.1ms | Allocations: 2463)
+
+
+Started GET "/posts" for ::1 at 2020-07-17 16:33:30 -0700
+Started GET "/comments" for ::1 at 2020-07-17 16:33:30 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.4ms | Allocations: 3790)
+
+
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 2.3ms | Allocations: 11271)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 08:53:25 -0700
+Started GET "/comments" for ::1 at 2020-07-23 08:53:25 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 1.2ms | Allocations: 8238)
+
+
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+Completed 200 OK in 331ms (Views: 287.2ms | ActiveRecord: 3.3ms | Allocations: 26231)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:30:42 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:30:42 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.3ms | Allocations: 12886)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 40ms (Views: 28.0ms | ActiveRecord: 0.8ms | Allocations: 20282)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:30:56 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"new post", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (3.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "new post"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:30:56.885626"], ["updated_at", "2020-07-23 16:30:56.885626"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 13ms (Views: 1.8ms | ActiveRecord: 6.6ms | Allocations: 3930)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:31:03 -0700
+Processing by PostsController#index as */*
+Started GET "/comments" for ::1 at 2020-07-23 09:31:03 -0700
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.2ms | Allocations: 5043)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 1.0ms | Allocations: 11595)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 09:31:21 -0700
+Started GET "/posts" for ::1 at 2020-07-23 09:31:21 -0700
+Processing by PostsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 3604)
+
+
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.8ms | Allocations: 11255)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:31:31 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"hire me", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hire me"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:31:31.304122"], ["updated_at", "2020-07-23 16:31:31.304122"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 3.5ms | Allocations: 3542)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:31:38 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:31:38 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 4526)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 1.1ms | Allocations: 12669)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:41:44 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 1.4ms | Allocations: 9739)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-07-23 09:41:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/comments" for ::1 at 2020-07-23 09:46:10 -0700
+Started GET "/posts" for ::1 at 2020-07-23 09:46:10 -0700
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Processing by PostsController#index as */*
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 3603)
+
+
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 1.3ms | Allocations: 11428)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 09:46:12 -0700
+Started GET "/posts" for ::1 at 2020-07-23 09:46:12 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 2453)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 1.2ms | Allocations: 12649)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:46:25 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"new posts here", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "new posts here"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:46:25.109505"], ["updated_at", "2020-07-23 16:46:25.109505"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 148]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 3.5ms | Allocations: 3544)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:46:30 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/comments" for ::1 at 2020-07-23 09:46:30 -0700
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.5ms | Allocations: 3778)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 148]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 1.2ms | Allocations: 14121)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:51:03 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:51:03 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 3630)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 148]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 2.6ms | Allocations: 13812)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:51:15 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"not staying", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "not staying"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:51:15.620115"], ["updated_at", "2020-07-23 16:51:15.620115"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 149]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 3.5ms | Allocations: 3542)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:51:20 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2020-07-23 09:51:20 -0700
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 4529)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 148]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 149]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 1.3ms | Allocations: 15255)
+
+
+Started DELETE "/posts/149" for ::1 at 2020-07-23 09:51:24 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"149", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 149], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 149]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (3.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 149]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 2009)
+
+
+Started DELETE "/posts/148" for ::1 at 2020-07-23 09:51:27 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"148", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 148], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 148]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (3.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 148]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 1854)
+
+
+Started DELETE "/posts/147" for ::1 at 2020-07-23 09:51:29 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"147", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 147], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 147]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (3.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 147]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 1854)
+
+
+Started DELETE "/posts/146" for ::1 at 2020-07-23 09:51:32 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"146", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 146], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 146]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (3.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 146]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 1855)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:51:35 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:51:35 -0700
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Processing by PostsController#index as */*
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2749)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.9ms | Allocations: 9336)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:53:26 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:53:26 -0700
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.7ms | Allocations: 2874)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 1.1ms | Allocations: 9049)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:53:40 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"new post", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "new post"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:53:40.618693"], ["updated_at", "2020-07-23 16:53:40.618693"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 3.5ms | Allocations: 3542)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:53:46 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:53:46 -0700
+Processing by PostsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 3596)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 1.0ms | Allocations: 11254)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:54:11 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"this should append to top", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "this should append to top"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:54:11.392593"], ["updated_at", "2020-07-23 16:54:11.392593"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 3.4ms | Allocations: 3544)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:54:15 -0700
+Started GET "/comments" for ::1 at 2020-07-23 09:54:15 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by CommentsController#index as */*
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 4334)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 1.2ms | Allocations: 12654)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 09:56:29 -0700
+Started GET "/posts" for ::1 at 2020-07-23 09:56:29 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 1.9ms | Allocations: 7156)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 61ms (Views: 51.9ms | ActiveRecord: 4.6ms | Allocations: 18650)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 09:56:46 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"all new posts should stay here", "state"=>"Cali", "country"=>"US"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("content", "state", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["content", "all new posts should stay here"], ["state", "Cali"], ["country", "US"], ["created_at", "2020-07-23 16:56:46.498911"], ["updated_at", "2020-07-23 16:56:46.498911"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:13:in `create'
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 3.3ms | Allocations: 3950)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 09:56:53 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2020-07-23 09:56:53 -0700
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+Processing by CommentsController#index as */*
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 3228)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 1.4ms | Allocations: 14200)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 10:04:06 -0700
+Started GET "/comments" for ::1 at 2020-07-23 10:04:06 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.6ms | Allocations: 3859)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 1.6ms | Allocations: 13698)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 10:04:11 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 40ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 6700)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 10:04:20 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"nothing", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 3015)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 10:04:22 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"nothing", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 3015)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 10:06:07 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"nothing", "state"=>"Cali", "country"=>""}}
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1709)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 10:06:27 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+Started GET "/comments" for ::1 at 2020-07-23 10:06:27 -0700
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 1.4ms | Allocations: 12299)
+
+
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 5938)
+
+
+Started POST "/posts" for ::1 at 2020-07-23 10:06:31 -0700
+Processing by PostsController#create as */*
+  Parameters: {"post"=>{"content"=>"bad", "state"=>"", "country"=>""}}
+Completed 422 Unprocessable Entity in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3012)
+
+
+Started GET "/posts" for ::1 at 2020-07-23 10:06:38 -0700
+Processing by PostsController#index as */*
+Started GET "/comments" for ::1 at 2020-07-23 10:06:38 -0700
+Processing by CommentsController#index as */*
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 3296)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 32.3ms | ActiveRecord: 4.1ms | Allocations: 14061)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 10:21:19 -0700
+Started GET "/posts" for ::1 at 2020-07-23 10:21:19 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.3ms | Allocations: 5082)
+
+
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 88ms (Views: 85.6ms | ActiveRecord: 2.0ms | Allocations: 13370)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 10:23:27 -0700
+Processing by CommentsController#index as */*
+Started GET "/posts" for ::1 at 2020-07-23 10:23:27 -0700
+Processing by PostsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 1.8ms | Allocations: 13533)
+
+
+Started DELETE "/posts/150" for ::1 at 2020-07-23 10:23:32 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"150", "post"=>{}}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 150], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 150]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (3.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 150]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 2008)
+
+
+Started DELETE "/posts/151" for ::1 at 2020-07-23 10:23:36 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"151", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 151], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 151]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (2.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 151]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.4ms | Allocations: 1856)
+
+
+Started DELETE "/posts/152" for ::1 at 2020-07-23 10:23:39 -0700
+Processing by PostsController#destroy as */*
+  Parameters: {"id"=>"152", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:27:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 152]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mPost Destroy (2.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 152]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 3.3ms | Allocations: 1856)
+
+
+Started GET "/comments" for ::1 at 2020-07-23 10:23:42 -0700
+Started GET "/posts" for ::1 at 2020-07-23 10:23:42 -0700
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Processing by PostsController#index as */*
+  ↳ app/controllers/comments_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 2809)
+
+
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 55]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 56]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 58]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 62]]
+  ↳ app/controllers/posts_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 1.4ms | Allocations: 9269)
+
+

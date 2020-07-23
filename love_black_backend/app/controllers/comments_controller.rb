@@ -5,17 +5,12 @@ class CommentsController < ApplicationController
     end
     def show 
         comment = Comment.find(params[:id])
-        # options = {
-        #     include: [:post]
-        # }
         render json: CommentSerializer.new(comment).serialized_json
     end 
     def create 
-        #comment = Comment.find(params[:post_id])
         comment = Comment.new(comment_params)
         if comment.save
-        render json: CommentSerializer.new(comment)
-        #.serialized_json    
+        render json: CommentSerializer.new(comment)    
         else 
             render :json => { :errors => comment.errors.full_messages }, :status => 422
         end

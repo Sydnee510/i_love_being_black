@@ -67,8 +67,6 @@ class Posts {
                 const newComment = new Comment(commentAttributes.id, commentAttributes.text, commentAttributes.post_id)
                 
                 for (let i = 0; i < this.posts.length; i++) {
-                    // console.log(typeof this.posts[i].id)
-                    // console.log(typeof postId)
                     if (this.posts[i].id.toString() === postId) {
                         this.posts[i].comments.push(newComment)
                         break;

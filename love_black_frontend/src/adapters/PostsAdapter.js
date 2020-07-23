@@ -8,7 +8,6 @@ class PostsAdapter {
         return fetch(this.postUrl)
         .then(res => res.json())
         .then(json => json.data)
-        //.then(json => json.data)
     }
     createPost(value, st, co){
         const post = {
@@ -34,15 +33,3 @@ class PostsAdapter {
             }) .then(res => res.json())
         }
  }
-    // updatePost(value, id){
-    //     const post = {
-    //         content: value,
-    //     }
-    //     return fetch(`${this.baseUrl}/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ post }),
-    //     }) .then(res => res.json())
-    // }
