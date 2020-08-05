@@ -45,15 +45,25 @@ class Posts {
             this.render()
         })
     }
+    likePost(e){
+        const likeId = e.target.getAttribute("data-id")
+        let input = document.getElementById('number-input')
+        input.value = parseInt(input.value) + 1
+    }
 
     handleClick(e) {
         e.preventDefault()
         if (e.target.classList.contains('delete-post')) {
            	this.deletePost(e)
             alert("post deleted!")
-        } else if (e.target.classList.contains('create-comment')){
+        } 
+        else if (e.target.classList.contains('create-comment')){
             this.createComment(e)
             alert("comment posted")
+        }
+        else if (e.target.classList.contains('like-button')){
+            this.likePost(e)
+            alert("post liked")
         }
     }
 

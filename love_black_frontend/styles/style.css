@@ -25,5 +25,9 @@ li  {
 .delete-post{
     background-color: tomato;
 }
+.like-button, .input{
+    display: inline-block;
+    padding: 10px;
+}
 
   
