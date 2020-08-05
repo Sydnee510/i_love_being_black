@@ -47,7 +47,7 @@ class Posts {
     }
     likePost(e){
         const likeId = e.target.getAttribute("data-id")
-        let input = document.getElementById('number-input')
+        let input = document.getElementById(`number-input-${likeId}`)
         input.value = parseInt(input.value) + 1
     }
 
